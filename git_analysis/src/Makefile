@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -I.
-LDFLAGS = -lm -lsndfile -lfftw3 
-SRC = load_files.c spectral_bandwidth.c test.c
+LDFLAGS = -lm -lsndfile -lfftw3 -laubio
+SRC = load_files.c spectral_bandwidth.c test.c RMSE.c rolloff.c ZCR.c tempo.c
 OBJ = $(SRC:.c=.o)
 EXEC = test
 
