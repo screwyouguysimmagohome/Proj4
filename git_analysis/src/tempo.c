@@ -12,7 +12,7 @@ double calculateTempo(const char *filename) {
     uint_t hop_size = 512;
     uint_t samplerate = 0;
     uint_t channels = 0;
-    uint_t buflen = 0;
+    uint_t buflen = 0, read = 0;
     aubio_source_t *source = NULL;
     aubio_tempo_t *tempo = NULL;
     fvec_t* buf = NULL;
@@ -26,7 +26,7 @@ double calculateTempo(const char *filename) {
         return 0.0;
     }
 
-
+  
     samplerate = aubio_source_get_samplerate(source);
     if (samplerate == 0) {
         // Default to a reasonable value if the samplerate couldn't be determined
@@ -36,7 +36,6 @@ double calculateTempo(const char *filename) {
 
     printf("source file open");
 
-    samplerate = aubio_source_get_samplerate(source);
     channels = aubio_source_get_channels(source);
     buflen = hop_size * channels;
 
@@ -71,7 +70,7 @@ double calculateTempo(const char *filename) {
         break;
     }
 
-    aubio_source_do(source, buf, NULL);
+    aubio_source_do(source, buf, &read);
     aubio_tempo_do(tempo, buf, buf);
 
     if (aubio_source_get_duration(source) == 0.) {

@@ -13,14 +13,14 @@ double calculateRMSE(const char *filename) {
     float *audioData;
     sf_count_t frames;
 
-    printf("Processing file: %s\n", filename);
+    //printf("Processing file: %s\n", filename);
 
     // Open the audio file
     if ((sndfile = sf_open(filename, SFM_READ, &sfinfo)) == NULL) {
         printf("Error opening file: %s\n", sf_strerror(NULL));
         return 0.0;
     }
-    printf("audio file opened\n");
+   // printf("audio file opened\n");
 
     if (sfinfo.format == 0) {
         printf("Unsupported audio format: %s\n", filename);
@@ -37,12 +37,12 @@ double calculateRMSE(const char *filename) {
         return 0.0;
     }
 
-    printf("memory allocated\n");
+    //printf("memory allocated\n");
 
     // Read audio data from the file
     frames = sf_readf_float(sndfile, audioData, sfinfo.frames);
 
-    printf("number of frames: %ld\n", frames);
+    //printf("number of frames: %ld\n", frames);
     if (frames < 0) {
         printf("Error reading audio data: %s\n", sf_strerror(sndfile));
         free(audioData);

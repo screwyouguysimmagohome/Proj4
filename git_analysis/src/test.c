@@ -34,13 +34,13 @@ int main() {
         sprintf(filePaths[i], "%s/%s", fileList[i].path, fileList[i].filename);
     }
  
-    printf("Number of files: %d\n", fileCount);
+    //printf("Number of files: %d\n", fileCount);
 
     
-    printf("File paths:\n");
+    //printf("File paths:\n");
 
-    for (int i = 0; i < fileCount; i++) {
-        printf("%s\n", filePaths[i]);}
+    //for (int i = 0; i < fileCount; i++) {
+        //printf("%s\n", filePaths[i]);}
 
 
 
@@ -56,8 +56,8 @@ int main() {
 
     double averageZeroCrossRate = getAverageZeroCrossRate((const char **)filePaths, fileCount);
     printf("Average Zero Cross Rate: %f\n", averageZeroCrossRate);
-    fflush(stdout);
-    printf("about to start average tempo");
+    //fflush(stdout);
+    //printf("about to start average tempo");
 
     //double averageTempo = getAverageTempo((const char **)filePaths, fileCount);
     //printf("Average Tempo: %f\n", averageTempo);

@@ -33,11 +33,11 @@ MP3FileInfo* listMP3Files(const char *directoryPath) {
 
     closedir(dir);
 
-    for (int i = 0; i < fileCount; i++) {
-        printf("File %d:\n", i + 1);
-        printf("Path: %s\n", fileList[i].path);
-        printf("Filename: %s\n", fileList[i].filename);
-    }
+    //for (int i = 0; i < fileCount; i++) {
+      //  printf("File %d:\n", i + 1);
+        //printf("Path: %s\n", fileList[i].path);
+        //printf("Filename: %s\n", fileList[i].filename);
+    //}
     
     return fileList;
 }
